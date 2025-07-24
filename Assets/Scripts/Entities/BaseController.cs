@@ -41,7 +41,7 @@ public class BaseController : MonoBehaviour
         // 실제 물리 이동
         _rigidbody.velocity = direction;
         
-        Rotate(movementDirection);  //이동할때만 방향 바뀔거임. zep처럼
+        Rotate(movementDirection);  //이동할때만 방향 바뀔거라서 Movement 있을 때만 확인. zep처럼
     }
 
     private void Rotate(Vector2 direction)
