@@ -24,6 +24,16 @@ public class PlayerController : BaseController
 
     void OnInteract(InputValue inputValue)
     {
-        Debug.Log("Trying to interact");
+        if (inputValue.isPressed)   //누를때, 뗄 때 두번 호출되서 isPressed로 체크
+        {
+            if (GameManager.Instance.isNextToWaterOfLife)
+            {
+                Debug.Log("Trying to interact: " + inputValue.isPressed);
+            }
+            else
+            {
+                Debug.Log("Nope, you're not around the Water Of Life");
+            }
+        }
     }
 }
