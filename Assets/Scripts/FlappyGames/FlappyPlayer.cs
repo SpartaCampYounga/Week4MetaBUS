@@ -43,7 +43,7 @@ public class FlappyPlayer : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
                     // 게임 재시작
-                    flappyGameManager.RestartGame();
+                    flappyGameManager.EndGame();
                 }
             }
             else

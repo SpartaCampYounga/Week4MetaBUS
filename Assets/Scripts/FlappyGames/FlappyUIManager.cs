@@ -7,7 +7,10 @@ public class FlappyUIManager : MonoBehaviour
 {
     public static FlappyUIManager Instance { get; private set; }
 
-    public StartUI StartUI { get; private set; }
+    public FlappyStartUI FlappyStartUI { get; private set; }
+    public FlappyGameUI FlappyGameUI { get; private set; }
+    public FlappyEndUI FlappyEndUI { get; private set; }
+
     private UIState currentState;
 
     private void Awake()
@@ -22,12 +25,15 @@ public class FlappyUIManager : MonoBehaviour
             return;
         }
 
-        StartUI = GetComponentInChildren<StartUI>(true);
+        FlappyStartUI = GetComponentInChildren<FlappyStartUI>(true);
+        FlappyGameUI = GetComponentInChildren<FlappyGameUI>(true);
+        FlappyEndUI = GetComponentInChildren<FlappyEndUI>(true);
     }
-    
     public void SetState(UIState uIState)
     {
         currentState = uIState;
-        StartUI.SetActive(currentState);
+        FlappyStartUI.SetActive(currentState);
+        FlappyGameUI.SetActive(currentState);
+        FlappyEndUI.SetActive(currentState);
     }
 }

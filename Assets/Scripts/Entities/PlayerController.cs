@@ -33,7 +33,7 @@ public class PlayerController : BaseController
                 {
                     if (response)
                     {
-                        SceneManager.LoadScene("FlappyGameScene");
+                        GameManager.Instance.EnterFlappyGame();
                     }
                     else
                     {

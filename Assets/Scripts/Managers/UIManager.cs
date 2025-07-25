@@ -3,12 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UIState
-{
-    Start,
-    Main,
-    Dialogue
-}
 public class UIManager : MonoBehaviour
 {
 
@@ -17,7 +11,7 @@ public class UIManager : MonoBehaviour
     public StartUI StartUI { get; private set; }
     public MainUI MainUI { get; private set; }
     public DialogueUI DialogueUI{ get; private set; }
-    private UIState currentState;
+    public UIState currentState { get; private set; }
 
     private void Awake()
     {
@@ -27,7 +21,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);  // 혹시 모를 게임매니저 복제 대응
+            Destroy(gameObject);
             return;
         }
 
