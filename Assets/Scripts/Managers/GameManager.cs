@@ -97,5 +97,7 @@ public class GameManager : MonoBehaviour
             SceneManager.sceneLoaded += sceneLoadCallback;
         }
         SceneManager.LoadScene("MainScene");  //메인 씬으로 돌아가기
+
+        Debug.Log("Best Score from Return: " + PlayerPrefs.GetInt("BestScore"));
     }
 }
