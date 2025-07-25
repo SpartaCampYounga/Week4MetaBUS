@@ -3103,7 +3103,7 @@ GameObject:
   - component: {fileID: 1382939897}
   - component: {fileID: 1382939896}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: FlappyGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

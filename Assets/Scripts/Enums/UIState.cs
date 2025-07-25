@@ -9,5 +9,6 @@ public enum UIState
     Dialogue,
     FlappyStart,
     FlappyGame,
-    FlappyEnd
+    FlappyEnd,
+    ScoreBoard
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -91,12 +91,15 @@ public class GameManager : MonoBehaviour
                     {
                         uIManager.SetState((UIState)uiState);  //이전 UI 상태로 복원
                     }
+
+                    UIManager.Instance.ShowScoreBoard();
                     SceneManager.sceneLoaded -= sceneLoadCallback;  //씬 로드 후 이벤트 제거
                 }
             };
             SceneManager.sceneLoaded += sceneLoadCallback;
         }
         SceneManager.LoadScene("MainScene");  //메인 씬으로 돌아가기
+        
 
         Debug.Log("Best Score from Return: " + PlayerPrefs.GetInt("BestScore"));
     }

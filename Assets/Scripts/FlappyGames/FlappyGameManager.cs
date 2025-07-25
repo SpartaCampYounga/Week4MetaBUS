@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,12 +25,13 @@ public class FlappyGameManager : MonoBehaviour
     private void Start()
     {
         flappyUIManager = FlappyUIManager.Instance;
-        Time.timeScale = 0f;    //½Ã°£ ¸ØÃß±â    //ÃÊ¹Ý ÇÁ·¹ÀÓÀº Àç»ý‰ç´Ù°¡ ¸ØÃß´Â Áß.. °³¼± ÇÊ¿äÇÔ.
+        Time.timeScale = 0f;    //ì‹œê°„ ë©ˆì¶”ê¸°    //ì´ˆë°˜ í”„ë ˆìž„ì€ ìž¬ìƒë¬ë‹¤ê°€ ë©ˆì¶”ëŠ” ì¤‘.. ê°œì„  í•„ìš”í•¨.
         flappyUIManager.SetState(UIState.FlappyStart);
     }
 
     public void GameOver()
     {
+        //ì ìˆ˜ ë¹„êµ í›„ ì €ìž¥
         if(PlayerPrefs.HasKey("BestScore"))
         {
             if(currentScore > PlayerPrefs.GetInt("BestScore"))
@@ -42,6 +43,7 @@ public class FlappyGameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("BestScore", currentScore);
         }
+        PlayerPrefs.SetInt("LastScore", currentScore);
         PlayerPrefs.Save();
         Debug.Log("Game Over");
         Debug.Log("Current Score: " + currentScore);
