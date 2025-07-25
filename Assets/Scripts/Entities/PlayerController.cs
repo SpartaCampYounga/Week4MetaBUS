@@ -1,9 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : BaseController
 {
+    [SerializeField] private PlayerInput playerInput;
     protected override void Start()
     {
         base.Start();
@@ -13,7 +14,19 @@ public class PlayerController : BaseController
     {
 
     }
+    public void SetPlayerInput(bool isEnable) 
+    {
+        if(playerInput == null)
+        {
+            Debug.LogError("PlayerInput is not assigned in PlayerController.");
+            return;
+        }
 
+        if (isEnable)
+            playerInput.ActivateInput();
+        else
+            playerInput.DeactivateInput();
+    }
     void OnMove(InputValue inputValue)
     {
         movementDirection = inputValue.Get<Vector2>();

@@ -103,4 +103,8 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Best Score from Return: " + PlayerPrefs.GetInt("BestScore"));
     }
+    public void SetPlayerInput(bool enabled)
+    {
+        player.SetPlayerInput(enabled);
+    }
 }

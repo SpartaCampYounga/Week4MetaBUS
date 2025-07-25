@@ -22,4 +22,12 @@ public class StartUI : BaseUI
     {
         GameManager.Instance.StartGame();
     }
+    public void OnEnable()  //StartUI가 활성화될 때 플레이어 입력을 비활성화
+    {
+        GameManager.Instance.SetPlayerInput(false);
+    }
+    public void OnDisable() //StartUI가 비활성화될 때 플레이어 입력을 활성화
+    {
+        GameManager.Instance.SetPlayerInput(true);
+    }
 }
