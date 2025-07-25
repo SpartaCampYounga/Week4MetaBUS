@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : BaseController
 {
@@ -29,10 +27,25 @@ public class PlayerController : BaseController
             if (GameManager.Instance.isNextToWaterOfLife)
             {
                 Debug.Log("Trying to interact: " + inputValue.isPressed);
+                string message = "Are you sure to drink this WATER OF LIFE?";
+                UIManager.Instance.SetState(UIState.Dialogue);
+                UIManager.Instance.StartDialogueCoroutine(message, (bool response) =>
+                {
+                    if (response)
+                    {
+                        SceneManager.LoadScene("FlappyGameScene");
+                    }
+                    else
+                    {
+                        string message = "Okay, it looks safer not to drink";
+                        UIManager.Instance.ActivateGameMessageUI(message);
+                    }
+                });
             }
             else
             {
-                Debug.Log("Nope, you're not around the Water Of Life");
+                string message = "Nope, you're not around the Water Of Life";
+                UIManager.Instance.ActivateGameMessageUI(message);
             }
         }
     }

@@ -6,14 +6,8 @@ using UnityEngine.UI;
 public class StartUI : BaseUI
 {
     [SerializeField] private Button startButton;
-    private void Start()
+    private void Awake()
     {
-
-    }
-    public override void Init(UIManager uIManager)
-    {
-        base.Init(uIManager);
-
         startButton.onClick.AddListener(OnClickStartButton);
     }
     protected override UIState GetUIState()

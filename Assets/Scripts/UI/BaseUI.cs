@@ -4,12 +4,12 @@ using UnityEngine;
 
 public abstract class BaseUI : MonoBehaviour
 {
-    protected UIManager uIManager;
+    // protected UIManager uIManager;
 
-    public virtual void Init(UIManager uIManager)
-    {
-        this.uIManager = uIManager;
-    }
+    // public virtual void Init()
+    // {
+    //     // this.uIManager = uIManager;  //UIManager 싱글톤 처리하여 제거함
+    // }
 
     protected abstract UIState GetUIState();
 
