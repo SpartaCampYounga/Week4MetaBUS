@@ -31,7 +31,7 @@ public class DialogueUI : BaseUI
 
         Debug.Log(userResponse + " 눌림");
         this.gameObject.SetActive(false);
-        callback.Invoke(userResponse.Value);    //bool? 값이므로 값만.
+        callback.Invoke(userResponse.Value);    //Nullable이므로 값만.
     }
 
     public void OnClickYesButton()
