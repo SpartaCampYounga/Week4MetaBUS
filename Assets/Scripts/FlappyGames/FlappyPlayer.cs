@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FlappyGamePlayer : MonoBehaviour
+public class FlappyPlayer : MonoBehaviour
 {
     Animator animator = null;
     Rigidbody2D _rigidbody = null;

@@ -21,8 +21,15 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);  // 혹시 모를 게임매니저 복제 대응
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);  // 혹시 모를 게임매니저 복제 대응
+            return;
+        }
 
         StartUI = GetComponentInChildren<StartUI>(true);
         MainUI = GetComponentInChildren<MainUI>(true);

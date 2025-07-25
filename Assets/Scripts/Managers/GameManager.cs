@@ -12,16 +12,22 @@ public class GameManager : MonoBehaviour
     private UIManager uIManager;
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);  // 혹시 모를 게임매니저 복제 대응
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);  // 중복된 게임매니저 제거
+            return;
+        }
 
-        uIManager = FindObjectOfType<UIManager>();
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         isGameStarted = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        uIManager = FindObjectOfType<UIManager>();
         uIManager.SetState(UIState.Start);
     }
 
