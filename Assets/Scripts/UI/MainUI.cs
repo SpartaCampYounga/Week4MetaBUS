@@ -8,11 +8,13 @@ public class MainUI : BaseUI
 {
     [SerializeField] private Image gameMessageBox;
     [SerializeField] private TextMeshProUGUI gameMessageText;
+    [SerializeField] private Interactable interactableDisplay;
     private float displayTime = 1.5f;
 
     private void Awake()
     {
         gameMessageBox.gameObject.SetActive(false);    //처음엔 꺼두기
+        interactableDisplay.gameObject.SetActive(false);
     }
 
     protected override UIState GetUIState()
@@ -29,6 +31,14 @@ public class MainUI : BaseUI
     {
         gameMessageText.text = "";
         gameMessageBox.gameObject.SetActive(false);
+    }
+    public void DisplayInteractable(bool isInteractable)
+    {
+        // Debug.Log("public void DisplayInteractable(bool isInteractable)" + isInteractable);
+        if (isInteractable)
+            interactableDisplay.gameObject.SetActive(true);
+        else
+            interactableDisplay.gameObject.SetActive(false);
     }
 
 }

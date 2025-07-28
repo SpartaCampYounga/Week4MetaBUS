@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     public StartUI StartUI { get; private set; }
     public MainUI MainUI { get; private set; }
-    public DialogueUI DialogueUI{ get; private set; }
+    public DialogueUI DialogueUI { get; private set; }
     public ScoreBoardUI ScoreBoardUI { get; private set; }
     public UIState currentState { get; private set; }
 
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
         DialogueUI = GetComponentInChildren<DialogueUI>(true);
         ScoreBoardUI = GetComponentInChildren<ScoreBoardUI>(true);
     }
-    
+
 
     public void SetState(UIState uIState)
     {
@@ -45,7 +45,6 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(DialogueUI.WaitForDialogueResponse(message, callback));
     }
-
     public void ActivateGameMessageUI(string message)   //내부 displayTime 후에 꺼지도록 해뒀음.
     {
         MainUI.DisplayGameMessage(message);

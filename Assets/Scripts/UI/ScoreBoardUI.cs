@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreBoardUI : BaseUI
+public class ScoreBoardUI : BaseUI  //ScoreResultUI에 더 가까움..
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI bestScoreText;
